@@ -74,4 +74,7 @@ for M, N in zip([M1, M2, M3, M4, M5, M6, M7, M8], [N1, N2, N3, N4, N5, N6, N7, N
     pyfftw_time = pyfftw_timer.timeit(number=num)
     print "  ",  numpy_time,  "seconds"
     print "  ",  pyfftw_time, "seconds"
-    print "  pyfftw is", (numpy_time/pyfftw_time), "times faster\n"
+    print "  pyfftw is", (numpy_time/pyfftw_time), "times faster"
+
+    # check to see if the two arrays are in fact equal with a certain tolerance
+    print np.allclose(np.fft.fft2(M), N()), '\n'
